@@ -1,0 +1,30 @@
+{
+  "name": "soria",
+  "version": "1.0.0",
+  "description": "A discord bot for Saturn's Stronghold",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CallMeMrSam/Soria.git"
+  },
+  "keywords": [
+    "Discord"
+  ],
+  "author": "CallMeMrSam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CallMeMrSam/Soria/issues"
+  },
+  "homepage": "https://github.com/CallMeMrSam/Soria#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0",
+    "fs": "0.0.1-security",
+    "js-yaml": "^3.14.1",
+    "mongoose": "^5.11.8",
+    "path": "^0.12.7"
+  }
+}

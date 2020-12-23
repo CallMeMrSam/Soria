@@ -1,0 +1,9 @@
+name: "**Name:**"
+aliases: "**Aliases:**"
+category: "**Category**:"
+description: "**Description:**"
+usage: "**Usage:**"
+flags: "**Flags:**"
+
+no_description: "**No description.**"
+none: "None."

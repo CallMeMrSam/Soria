@@ -1,0 +1,5 @@
+error: "Error."
+no_permission: "You do not have the permission required. Permission %{p} required."
+
+no_channel: "Please mention a channel."
+no_argument: "Please specify an argument."

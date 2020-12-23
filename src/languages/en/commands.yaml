@@ -1,0 +1,8 @@
+help:
+  description: "Help command."
+
+  messages:
+    cannot_find_command: "Unable to find the command."
+    more_help: "**More help:** %{prefix}help <command>"
+    infos: "To use this menu, click on the reactions below. If there isn't reactions, that means that the menu has expired (one minute after executing the command)"
+    info_command: "All information about **%{command}** is here."

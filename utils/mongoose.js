@@ -6,6 +6,7 @@ const models = require('../models/index');
 
 const Client = require('../structure/Client');
 const { Guild, GuildMember } = require('discord.js');
+const { DEFAULT_MEMBER_SETTINGS } = require('./config')
 
 module.exports = class {
 
@@ -117,16 +118,11 @@ module.exports = class {
      * @param {GuildMember} member Membre
      */
     async createMember(guild, member) {
-        const defaultData = {
-            id: member.id,
-            experience: 0,
-            level: 1
-        }
         await models.Guild.updateOne({ guildID: guild.id }, {
-            $push: { users: [defaultData] }
+            $push: { users: [DEFAULT_MEMBER_SETTINGS] }
         });
         this._updateGuildCache(guild);
-        return defaultData
+        return DEFAULT_MEMBER_SETTINGS
     }
 
     /**
@@ -138,7 +134,9 @@ module.exports = class {
         const data = await this.getGuild(guild);
         const position = data.users.map(u => u.id).indexOf(member.user.id);
         if(position == -1) return await this.createMember(guild, member);
-        return data.users[position];
+        let memberData = data.users[position];
+
+        return Object.assign( Object.assign({}, DEFAULT_MEMBER_SETTINGS), memberData );
     }
 
     /**

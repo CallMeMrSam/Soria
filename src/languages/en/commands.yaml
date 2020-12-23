@@ -11,6 +11,21 @@ rank:
   description: "View someone's level."
   level: "**Level** %{level}"
 
+profile:
+  description: "View someone's profile"
+
+  level: "🏆 Level"
+  reputation: "❤ Reputation"
+  money: "💸 Money"
+
+bio:
+  description: "Modify your biography."
+
+  messages:
+    bio_off: "Your biography has been deleted."
+    bio_updated: "Your biography has been updated."
+    error_length: "Your biography must be between 3 and 2048 characters long."
+
 prefix:
   description: "Edit bot's prefix"
 

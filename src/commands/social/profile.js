@@ -31,13 +31,17 @@ module.exports = class extends Command {
         let member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.filter(x => x.user.tag === args.join(' ')).first() || message.member;
     
         let data = message.data.member;
-        if(member.id !== message.author.id) data = await this.client.db.getMember(member.id);
+        if(member.id !== message.author.id) data = await this.client.db.getMember(message.guild, message.member);
     
-        new Embed(this.client, 'main', language)
+        let profile = new Embed(this.client, 'main', language)
           .setAuthor(member.nickname || member.user.username, member.user.avatarURL())
           .setColor(member.displayHexColor)
-          .setDescription(`${language.get('commands', 'rank.level', { level: data.level })} (${data.experience}/${this.client.functions.xpMax(data.level)})\n${this.client.functions.xpProgressBar(this.client, data.level, data.experience)}`)
-          .sender(message.author)
-          .sendIn(message.channel)
+          .addField(language.get('commands', 'profile.level'), `> **${data.level}**`, true)
+          .addField(language.get('commands', 'profile.reputation'), `> **${data.reputation}**`, true)
+          .addField(language.get('commands', 'profile.money'), `> **${data.money}$**`, true)
+      
+        if(data.bio) profile.setDescription(data.bio);
+        if(message.author.id !== member.id) profile.sender(message.author)
+        profile.sendIn(message.channel)
     }
 }

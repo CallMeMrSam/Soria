@@ -31,7 +31,7 @@ module.exports = class extends Command {
         let member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.guild.members.cache.filter(x => x.user.tag === args.join(' ')).first() || message.member;
     
         let data = message.data.member;
-        if(member.id !== message.author.id) data = await this.client.db.getMember(member.id);
+        if(member.id !== message.author.id) data = await this.client.db.getMember(message.guild, message.member);
     
         new Embed(this.client, 'main', language)
           .setAuthor(member.nickname || member.user.username, member.user.avatarURL())

@@ -7,17 +7,17 @@ module.exports = class {
    */
   constructor(client, {
     name = "",
-    module = "default",
     aliases = new Array(),
     usage = new Array(),
     flags = new Array(),
 
     permission = "user",
+    module = "default",
 
     enabled = true
   }) {
     this.client = client;
-    this.info = { name, module, aliases, usage, flags }
-    this.config = { permission, enabled };
+    this.info = { name, aliases, usage, flags, category: "unlisted" }
+    this.config = { permission, enabled, module };
   }
 }

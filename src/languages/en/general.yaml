@@ -1,2 +1,9 @@
 embed:
   sender: "Executed by %{user}"
+
+error_embed_title: "❌ Error"
+success_embed_title: "✅ Success"
+
+levels:
+  level_up: "> **GG %{user}! You just passed level %{level}**"
+  level_up_role: "> **GG %{user}! You just passed level %{level}**\nYo got the `%{role}` role!"

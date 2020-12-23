@@ -3,13 +3,9 @@ const { Event, Embed } = require('../../../structure/Bot');
 const { Message } = require('discord.js');
 
 module.exports = class extends Event {
-  /**
-   * 
-   * @param {Client} client 
-   */
-  constructor(client) {
+
+  constructor() {
     super('message');
-    this.client = client;
   }
 
   /**
@@ -27,21 +23,28 @@ module.exports = class extends Event {
         user: await client.db.getUser(message.author.id)
     }
 
-    message.prefix = message.data.guild.prefix || client.config.DEFAULT_SETTINGS.prefix
+    if(!message.data.guild.modules.includes('default')) message.data.guild.modules.push('default')
 
-    if(message.content.indexOf(message.prefix) !== 0) return;
+    message.prefix = message.data.guild.prefix || client.config.DEFAULT_SETTINGS.prefix
+    let language = client.getLanguage(message.data.guild.lang || client.config.DEFAULT_SETTINGS.lang);
+    message.language = language
+
+    if(message.content.indexOf(message.prefix) !== 0) {
+      if(message.data.guild.modules.includes('levels')) client.emit('xp', (language, message))
+      return
+    }
 
     const args = message.content.slice(message.prefix.length).trim().split(/\s+/g);
     const cmdName = args.shift().toLowerCase();
 
     if(message.guild && !message.member) await message.guild.fetchMember(message.author);
-
-    let language = client.getLanguage(message.data.guild.lang || client.config.DEFAULT_SETTINGS.lang);
     
     const cmd = client.commands.get(cmdName) || client.commands.get(client.aliases.get(cmdName));
     if(!cmd) return;
 
-    if(client.permissions[cmd.config.permission] && !client.permissions[cmd.config.permission](message.member, client)) return message.reply(language.get('errors', 'no_permission', {p: cmd.config.permission}))
+    if(!message.data.guild.modules.includes(cmd.config.module)) return Embed.error(client, message.author, language, 'errors', 'module_disabled', {m: cmd.config.module}).sendIn(message.channel);
+
+    if(!client.permissions[cmd.config.permission](message.member, client)) return Embed.error(client, message.author, language, 'errors', 'no_permission', {p: cmd.config.permission}).sendIn(message.channel);
 
     message.flags = [];
     while (args[0] && args[0][0] === "-") {

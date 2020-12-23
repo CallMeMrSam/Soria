@@ -1,7 +1,9 @@
 /**
  * @author CallMeMrSam
  */
-const { Command, Client, Embed, Language } = require('../../../structure/Bot');
+const Client = require('../../../structure/Client');
+const Language = require('../../../structure/Language');
+const { Command, Embed } = require('../../../structure/Bot');
 const { Message } = require('discord.js');
 
 module.exports = class extends Command {
@@ -26,40 +28,36 @@ module.exports = class extends Command {
      */
     async run(language, message, args) {
         
-        let commands = this.client.getCommands;
-        let categories = this.client.getCategories;
-        
+        let commands = Object.assign({}, this.client.getCommands);
+        let categories = [];
+
+        for(var c in commands) {
+            commands[c] = commands[c]
+                .filter((x) => message.data.guild.modules.includes(x.module))
+                .filter((x) => this.client.permissions[x.permission](message.member, this.client));
+            if(commands[c].length > 0) categories.push(this.client.constants.HELP[c] ? Object.assign({id: c}, this.client.constants.HELP[c]) : {id: c, name: c, emoji: '📄', pos: 99})
+        }
+        categories = categories.sort((a, b) => a.pos-b.pos);
+
         if(args[0]) {
             let command;
             
             if(this.client.commands.get(args[0].toLowerCase())) {
-                command = this.client.commands.get(args[0].toLowerCase()).info;
+                command = this.client.commands.get(args[0].toLowerCase());
             }
             else if(this.client.aliases.get(args[0].toLowerCase())) {
-                command = this.client.commands.get(this.client.aliases.get(args[0].toLowerCase())).info;
+                command = this.client.commands.get(this.client.aliases.get(args[0].toLowerCase()));
             }
-            else return this.client.functions.error(this.client, message.channel, language, language.get('commands', 'help.messages.cannot_find_command'), message.author);
+            else return Embed.error(this.client, message.author, language, 'commands', 'help.messages.cannot_find_command').sendIn(message.channel);
+            if(!this.client.permissions[command.config.permission](message.member, this.client)) return Embed.error(this.client, message.author, language, 'errors', 'no_permission', {p: command.config.permission}).sendIn(message.channel);
+            
+            let category = categories.find(i => i.id === command.info.category);
 
-            let category = categories.find(i => i.id === command.category);
-
-            let help = new Embed(this.client, "main", language)
-                .fast(`${command.name} ─ ${category.emoji} ${language.get('categories', category.id)}`,
-                        language.get('commands', 'help.messages.info_command', { command: command.name }))
+            return Embed.getHelpEmbedFor(command.info.name, message.prefix, language, this.client)
+                .fast(`${command.info.name} ─ ${category.emoji} ${language.get('categories', category.id)}`,
+                    language.get('commands', 'help.messages.info_command', { command: command.info.name }))
                 .sender(message.author)
-                .addField(language.get('help', 'name'), `> \`${command.name}\``, true)
-                .addField(language.get('help', 'aliases'), `> ${command.aliases.length > 0 ? command.aliases.map(x => `\`${x}\``).join(', '): language.get('help', 'none')}`, true)
-                .addField(language.get('help', 'category'), `> \`${category.name}\``, true)
-                .addField(language.get('help', 'description'), `> ${language.get('commands', `${command.name}.description`) || language.get('help', 'no_description')}`)
-
-            if(command.usage.length > 0) {
-                help.addField(language.get('help', 'usage'), command.usage.map(x => `> \`${message.prefix}${x}\``).join('\n'))
-            }
-
-            if(command.flags.length > 0) {
-                help.addField(language.get('help', 'flags'), command.flags.map((x) => `> \`-${x[0]}\`: **${x[1]}**`))
-            }
-
-            return help.sendIn(message.channel);
+                .sendIn(message.channel);
 
         } else {
 

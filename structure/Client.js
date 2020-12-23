@@ -18,6 +18,7 @@ module.exports = class extends Client {
     this.constants = require('../utils/constants');
     this.functions = require('../utils/functions');
     this.permissions = require('../utils/permissions');
+    this.modulesInfo = require('../utils/modules');
 
     this.logger = new Logger();
     this.db = new (require('../utils/mongoose'))(this);
@@ -43,12 +44,13 @@ module.exports = class extends Client {
         cmd.info.aliases.forEach((a) => this.aliases.set(a, cmd.info.name));
         this.logger.success(`Command ${cmd.info.name} loaded`);
         
-        if(!modules.includes(cmd.info.module)) modules.push(cmd.info.module);
+        if(!modules.includes(cmd.config.module)) modules.push(cmd.config.module);
+        if(this.modulesInfo[cmd.config.module]) this.modulesInfo[cmd.config.module].commands.push(cmd.info.name);
         if(!commandsCache[cmd.info.category]) {
           categoriesCache.push(this.constants.HELP[cmd.info.category] ? Object.assign({id: cmd.info.category}, this.constants.HELP[cmd.info.category]) : {id: cmd.info.category, name: cmd.info.category, emoji: '📄', pos: 99});
           commandsCache[cmd.info.category] = [];
         }
-        commandsCache[cmd.info.category].push(cmd.info);
+        commandsCache[cmd.info.category].push(Object.assign(cmd.info, cmd.config));
       })
     })
   }

@@ -98,7 +98,14 @@ module.exports = class {
 
         if(typeof data !== "object") data = {};
         for(const key in pushData) {
-            if(data[key] !== pushData[key]) data[key] = pushData[key];
+            if(data[key] !== pushData[key]) {
+                if(typeof pushData[key] === "object") {
+                    for(const key2 in pushData[key]) {
+                        if(data[key][key2] !== pushData[key][key2]) data[key][key2] = Object.assign(data[key][key2], pushData[key][key2])
+                    }
+                }
+                else data[key] = pushData[key];
+            }
         }
         this._updateGuildCache(guild, data);
         return await data.updateOne(data);

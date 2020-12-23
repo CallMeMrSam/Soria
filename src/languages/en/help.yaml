@@ -4,6 +4,8 @@ category: "**Category**:"
 description: "**Description:**"
 usage: "**Usage:**"
 flags: "**Flags:**"
+module: "**Module:**"
+permission: "**Permission:**"
 
 no_description: "**No description.**"
 none: "None."

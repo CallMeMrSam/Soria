@@ -21,7 +21,7 @@ const guildSchema = Schema({
 
     modules: {
       type: Array,
-      default: []
+      default: ['defaults', 'levels', 'social']
     },
 
     prefix: {

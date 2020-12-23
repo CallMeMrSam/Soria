@@ -6,3 +6,42 @@ help:
     more_help: "**More help:** %{prefix}help <command>"
     infos: "To use this menu, click on the reactions below. If there isn't reactions, that means that the menu has expired (one minute after executing the command)"
     info_command: "All information about **%{command}** is here."
+
+rank:
+  description: "View someone's level."
+  level: "**Level** %{level}"
+
+prefix:
+  description: "Edit bot's prefix"
+
+  messages:
+    prefix_edit: "**The prefix has been changed:** `%{prefix}`"
+    prefix_reset: "**The prefix has been reset:** `%{prefix}`"
+
+module:
+  description: "Edit bot's modules"
+
+  title: "Modules"
+  messages:
+    activated_modules: "**__Activated modules:__**"
+    disabled_modules: "**__Disabled modules:__**"
+    toggle_module: "Toggle module"
+    invalid_module: "Please specify a valid module."
+    undesactivable: "**Undesactivable:** %{b}"
+    commands: "**Commands:**\n%{c}"
+    module_activated: "**The `%{m}` module has been __activated__**"
+    module_disabled: "**The `%{m}` module has been __disabled__**"
+    undesactivable_module: "This module is undesactivable."
+    
+
+language:
+  description: "Edit bot's language for the guild"
+
+role-reward:
+  description: "Add role reward for levels"
+
+  title: "Role Reward"
+  messages:
+    role_set: "Role %{role} defined at level %{level}."
+    role_deleted: "Role at level %{level} disabled."
+    no_roles: "No role."

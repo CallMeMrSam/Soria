@@ -1,18 +1,19 @@
 const Client = require('../../../structure/Client');
 const { Event } = require('../../../structure/Bot');
+const { Guild } = require('discord.js');
 
 module.exports = class extends Event {
 
   constructor() {
-    super('ready');
+    super('guildCreate');
   }
 
   /**
    * 
    * @param {Client} client 
+   * @param {Guild} guild
    */
-  run(client) {
-    client.logger.success(`${client.user.tag} ready.`);
-    client.user.setActivity({ name: "/help", type: 'WATCHING' });
+  run(client, guild) {
+    console.log('new guild: ', guild.name)
   }
 }

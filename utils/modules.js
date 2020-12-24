@@ -10,5 +10,9 @@ module.exports = {
   'social': {
     undesactivable: false,
     commands: []
+  },
+  'economy': {
+    undesactivable: false,
+    commands: []
   }
 }

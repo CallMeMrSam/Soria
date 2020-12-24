@@ -46,7 +46,7 @@ module.exports = class extends Command {
         'lastRep': new Date().getTime()
       })
     } else {
-      return message.channel.send(language.get('commands', 'rep.messages.time', { time: this.client.functions.msToDurationFormated(((lastRep + 43200000) - new Date().getTime()), language)}));
+      return Embed.error(this.client, message.author, language, 'commands', 'rep.messages.time', { time: this.client.functions.msToDurationFormated(((lastRep + 43200000) - new Date().getTime()), language) }).sendIn(message.channel);
     }
   }
 }

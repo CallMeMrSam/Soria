@@ -48,6 +48,17 @@ leaderboard:
     your_position: "🎖 Your position:"
     out_of_leaderboard: "Out of leaderboard"
 
+# ECONOMY COMMANDS ------------
+
+daily:
+  description: "Win XP and Money every days!"
+
+  levels: "level•s"
+  messages:
+    reward: "> 💸 **%{user}, you won:**"
+    time: "> You will be able to take your daily reward in %{time}."
+     
+
 # SETTINGS COMMANDS -------------
 
 prefix:
@@ -84,3 +95,8 @@ role-reward:
     role_set: "Role %{role} defined at level %{level}."
     role_deleted: "Role at level %{level} disabled."
     no_roles: "No role."
+
+# EVAL ---------
+
+eval:
+  description: "Eval javascript code"

@@ -41,7 +41,7 @@ module.exports = class {
         mongoose.Promise = global.Promise;
         
         mongoose.connection.on("connected", () => {
-            this.client.logger.success("Connecté avec la BDD.");
+            this.client.logger.success("BDD connected");
             this.client.connectedToDB = true;
         });
     }

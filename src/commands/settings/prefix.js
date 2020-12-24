@@ -17,7 +17,7 @@ module.exports = class extends Command {
             name: "prefix",
             aliases: [`soria-prefix`],
             usage: ['prefix <new prefix>', 'prefix <default>'],
-            permission: 'owner'
+            permission: 'admin'
         });
     }
 

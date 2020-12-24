@@ -18,7 +18,7 @@ module.exports = class extends Command {
             aliases: [],
             usage: ['role-reward list', 'role-reward set <level> <role>', 'role-reward delete <level>'],
             module: 'levels',
-            permission: 'owner'
+            permission: 'admin'
         });
     }
 

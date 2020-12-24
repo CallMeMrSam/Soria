@@ -17,7 +17,7 @@ module.exports = class extends Command {
             name: "module",
             aliases: ['modules'],
             usage: ['module list', 'module info <module>', 'module toggle <module>'],
-            permission: 'owner'
+            permission: 'admin'
         });
     }
 

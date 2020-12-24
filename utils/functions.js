@@ -1,6 +1,6 @@
 const Client = require('../structure/Client');
 const Language = require('../structure/Language');
-const { Guild, Role } = require('discord.js');
+const { GuildMember, Role } = require('discord.js');
 
 /**
  * 
@@ -88,3 +88,41 @@ module.exports.xpProgressBar = (client, level, xp, size = 8) => client.constants
  * @param {Role} role 
  */
 module.exports.canGiveRole = (role) => (role.position < role.guild.me.roles.highest.position) && role.guild.me.permissions.has('MANAGE_ROLES', true)
+
+/**
+ * Obtenir un nombre aléatoire depuis une intervale.
+ * @param {number} min
+ * @param {number} max
+ */
+module.exports.randomIntFromInterval = (min, max) => Math.floor(Math.random() * ( max-min+1 ) + min);
+
+
+/**
+ * 
+ * @param {Number} xp 
+ * @param {Number} level
+ * @param {GuildMember} member
+ * @param {object} data
+ * @param {Client} client 
+ */
+module.exports.levelUp = (xp, level, member, data, client) => {
+  let xpMax = this.xpMax(level);
+  let winLevel = 0;
+  let winRole = [];
+
+  while (xp >= xpMax) {
+      xp -= xpMax;
+      level++;
+      winLevel++;
+      xpMax = this.xpMax(level);
+
+      if(data.guild && data.guild.settings && data.guild.settings.roleReward) {
+        role = member.guild.roles.cache.get(data.guild.settings.roleReward[level]);
+        if(role && client.functions.canGiveRole(role)) { member.roles.add(role); winRole.push(role); }
+      }
+  }
+
+  return {
+      winLevel, winRole, xp, level
+  };
+}

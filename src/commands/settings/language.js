@@ -17,7 +17,7 @@ module.exports = class extends Command {
             name: "language",
             aliases: [],
             usage: ['language <language>'],
-            permission: 'owner'
+            permission: 'admin'
         });
     }
 

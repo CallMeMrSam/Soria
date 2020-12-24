@@ -1,3 +1,4 @@
+# GENERAL COMMANDS -------------
 help:
   description: "Help command."
 
@@ -6,6 +7,8 @@ help:
     more_help: "**More help:** %{prefix}help <command>"
     infos: "To use this menu, click on the reactions below. If there isn't reactions, that means that the menu has expired (one minute after executing the command)"
     info_command: "All information about **%{command}** is here."
+
+# SOCIAL COMMANDS -------------
 
 rank:
   description: "View someone's level."
@@ -25,6 +28,27 @@ bio:
     bio_off: "Your biography has been deleted."
     bio_updated: "Your biography has been updated."
     error_length: "Your biography must be between 3 and 2048 characters long."
+
+rep:
+  description: "Give reputation points to an user"
+
+  messages:
+    give: "> ❤ **%{author}, you gave %{user} a reputation point!**"
+    time: "> You will be able to give a reputation point in %{time}."
+
+leaderboard:
+  description: "Show server's leaderboard"
+
+  reputation_title: "🏆 Leaderboard - Reputation"
+  levels_title: "🏆 Leaderboard - Levels"
+  money_title: "🏆 Leaderboard - Money"
+
+  messages:
+    update: "Leaderboard updated every 5 minutes."
+    your_position: "🎖 Your position:"
+    out_of_leaderboard: "Out of leaderboard"
+
+# SETTINGS COMMANDS -------------
 
 prefix:
   description: "Edit bot's prefix"

@@ -28,6 +28,7 @@ module.exports = class extends Command {
      * @param {String[]} args 
      */
     async run(language, message, args) {
+        return message.channel.send('> *Work in progress.*')
         let new_language = args.shift();
         if(!new_language) return Embed.getHelpEmbedFor('language', message.prefix, language, this.client).fast(language.get('general', 'error_embed_title'), language.get('errors', 'no_argument')).sender(message.author).sendIn(message.channel)
     }

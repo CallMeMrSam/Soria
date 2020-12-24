@@ -4,13 +4,6 @@ const { Message } = require('discord.js');
 
 const cooldown = new Set();
 
-function getRandomLevelUpMessage(user, level, role) {
-  let messagesList = [`> **GG ${user}! Tu viens de passer niveau ${level}!**`];
-  let message = messagesList[Math.floor(Math.random() * messagesList.length)];
-  if(role) message += ` Tu as obtenu le grade **${role.name}**!`
-  return message;
-}
-
 module.exports = class extends Event {
 
   constructor() {
@@ -29,7 +22,7 @@ module.exports = class extends Event {
     let experience = new Number(message.data.member.experience || 0);
     let level = new Number(message.data.member.level || 1);
     let max = client.functions.xpMax(level);
-    let win = Math.floor(Math.random() * 5)+1 * 50;
+    let win = Math.floor(Math.random() * 5)+1;
 
     experience = experience + win;
     if(experience >= max) {

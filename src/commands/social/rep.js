@@ -34,7 +34,7 @@ module.exports = class extends Command {
     let lastRep = (+message.data.member.lastRep || 0);
   
     if(lastRep == 0 || (new Date().getTime() - lastRep) >= 43200000) {
-      let data = await this.client.db.getMember(message.guild, message.member);
+      let data = await this.client.db.getMember(message.guild, member);
       let rep = (+data.reputation || 0) + 1;
 
       message.channel.send(language.get('commands', 'rep.messages.give', { author: `<@${message.author.id}>`, user: `<@${member.id}>` }));

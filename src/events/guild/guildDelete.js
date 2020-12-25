@@ -17,7 +17,7 @@ module.exports = class extends Event {
     await client.db.deleteGuild(guild);
     if(client.channels.cache.get('791703562576461865')) {
       new Embed(client, 'error', null, true)
-        .setTitle(`${client.user.name} left a server`)
+        .setTitle(`${client.user.username} left a server`)
         .setDescription(`> **${guild.name}**`)
         .setThumbnail(guild.iconURL())
         .addField('Member Count', `> **${guild.memberCount}**`)

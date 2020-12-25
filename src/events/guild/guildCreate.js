@@ -17,7 +17,7 @@ module.exports = class extends Event {
     await client.db.createGuild(guild);
     if(client.channels.cache.get('791703562576461865')) {
       new Embed(client, 'success', null, true)
-        .setTitle(`${client.user.name} joined a server`)
+        .setTitle(`${client.user.username} joined a server`)
         .setDescription(`> **${guild.name}**`)
         .setThumbnail(guild.iconURL())
         .addField('Member Count', `> **${guild.memberCount}**`, true)

@@ -35,7 +35,7 @@ module.exports = class extends Command {
         })
         return Embed.success(this.client, message.author, language, 'commands', 'bio.messages.bio_off').sendIn(message.channel)
       }
-      let bio = message.content.slice(message.content.length - args.join(' ').length);
+      let bio = message.content.slice(message.cleanContent.length - args.join(' ').length);
       if(bio.length <= 3 || bio.length >= 2048) return Embed.error(this.client, message.author, language, 'commands', 'bio.messages.error_length').sendIn(message.channel)
       
       await this.client.db.updateMember(message.guild, message.member, {

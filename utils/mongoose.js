@@ -6,7 +6,7 @@ const models = require('../models/index');
 
 const Client = require('../structure/Client');
 const { Guild, GuildMember } = require('discord.js');
-const { DEFAULT_MEMBER_SETTINGS } = require('./config')
+const { DEFAULT_MEMBER_SETTINGS } = require('./config');
 
 module.exports = class {
 
@@ -69,6 +69,15 @@ module.exports = class {
         await createdGuild.save();
         this._updateGuildCache(guild, createdGuild);
         return createdGuild;
+    }
+
+    /**
+     * Supprimer les données d'un serveur.
+     * @param {Guild} guild Serveur
+     */
+    async deleteGuild(guild) {
+        await models.Guild.findOneAndDelete({ guildID: guild.id });
+        if(this.guildsCache[guild.id]) this.guildsCache[guild.id] = {};
     }
 
 

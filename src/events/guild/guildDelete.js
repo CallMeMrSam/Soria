@@ -5,7 +5,7 @@ const { Guild } = require('discord.js');
 module.exports = class extends Event {
 
   constructor() {
-    super('guildCreate');
+    super('guildDelete');
   }
 
   /**
@@ -14,10 +14,10 @@ module.exports = class extends Event {
    * @param {Guild} guild
    */
   async run(client, guild) {
-    await client.db.createGuild(guild);
+    await client.db.deleteGuild(guild);
     if(client.channels.cache.get('791703562576461865')) {
-      new Embed(client, 'success', null, true)
-        .setTitle(`${client.user.name} joined a server`)
+      new Embed(client, 'error', null, true)
+        .setTitle(`${client.user.name} left a server`)
         .setDescription(`> **${guild.name}**`)
         .setThumbnail(guild.iconURL())
         .addField('Owner', `> **${guild.owner.user.tag}**`, true)

@@ -127,11 +127,12 @@ module.exports = class {
      * @param {GuildMember} member Membre
      */
     async createMember(guild, member) {
+        let pushData = Object.assign({}, DEFAULT_MEMBER_SETTINGS, { id: member.id });
         await models.Guild.updateOne({ guildID: guild.id }, {
-            $push: { users: [DEFAULT_MEMBER_SETTINGS] }
+            $push: { users: [pushData] }
         });
         this._updateGuildCache(guild);
-        return DEFAULT_MEMBER_SETTINGS
+        return pushData
     }
 
     /**

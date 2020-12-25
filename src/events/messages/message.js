@@ -42,6 +42,8 @@ module.exports = class extends Event {
     const cmd = client.commands.get(cmdName) || client.commands.get(client.aliases.get(cmdName));
     if(!cmd) return;
 
+    if(cmd.config.guild && message.guild.id !== cmd.config.guild) return;
+
     if(!message.data.guild.modules.includes(cmd.config.module)) return Embed.error(client, message.author, language, 'errors', 'module_disabled', {m: cmd.config.module}).sendIn(message.channel);
 
     if(!client.permissions[cmd.config.permission](message.member, client)) return Embed.error(client, message.author, language, 'errors', 'no_permission', {p: cmd.config.permission}).sendIn(message.channel);

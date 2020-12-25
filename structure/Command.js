@@ -14,11 +14,12 @@ module.exports = class {
     permission = "user",
     module = "default",
 
+    guild = undefined,
     enabled = true,
     moduleInfoHidden = false
   }) {
     this.client = client;
     this.info = { name, aliases, usage, flags, category: "unlisted" }
-    this.config = { permission, enabled, module, moduleInfoHidden };
+    this.config = { guild, permission, enabled, module, moduleInfoHidden };
   }
 }

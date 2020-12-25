@@ -43,6 +43,8 @@ module.exports = class extends Client {
         this.commands.set(cmd.info.name, cmd);
         cmd.info.aliases.forEach((a) => this.aliases.set(a, cmd.info.name));
         this.logger.success(`Command ${cmd.info.name} loaded`);
+
+        if(cmd.config.guild) return;
         
         if(!modules.includes(cmd.config.module)) modules.push(cmd.config.module);
         if(!this.modulesInfo[cmd.config.module]) this.modulesInfo[cmd.config.module] = { undesactivable: false, commands: [] };

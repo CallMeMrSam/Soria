@@ -1,7 +1,11 @@
+let _modules = [];
+for(const m in require('./modules')) { _modules.push(m) }
+
 module.exports = {
   DEFAULT_SETTINGS: {
     prefix: '!',
-    lang: 'en'
+    lang: 'en',
+    modules: _modules
   },
 
   DEFAULT_MEMBER_SETTINGS: {

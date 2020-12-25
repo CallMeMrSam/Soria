@@ -100,6 +100,7 @@ module.exports.randomIntFromInterval = (min, max) => Math.floor(Math.random() * 
 /**
  * 
  * @param {Number} xp 
+ * @param {Number} winXp 
  * @param {Number} level
  * @param {GuildMember} member
  * @param {object} data
@@ -110,19 +111,17 @@ module.exports.levelUp = (xp, level, member, data, client) => {
   let winLevel = 0;
   let winRole = [];
 
-  while (xp >= xpMax) {
-      xp -= xpMax;
-      level++;
-      winLevel++;
-      xpMax = this.xpMax(level);
-
-      if(data.guild && data.guild.settings && data.guild.settings.roleReward) {
-        role = member.guild.roles.cache.get(data.guild.settings.roleReward[level]);
-        if(role && client.functions.canGiveRole(role)) { member.roles.add(role); winRole.push(role); }
-      }
+  while (xp >= xpMax) {;
+    xp -= xpMax
+    level++;
+    winLevel++;
+    xpMax = this.xpMax(level);
+    
+    if(data.guild && data.guild.settings && data.guild.settings.roleReward) {
+      role = member.guild.roles.cache.get(data.guild.settings.roleReward[level]);
+      if(role && client.functions.canGiveRole(role)) { member.roles.add(role); winRole.push(role); }
+    }
   }
 
-  return {
-      winLevel, winRole, xp, level
-  };
+  return { winLevel, winRole, xp, level }
 }

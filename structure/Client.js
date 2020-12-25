@@ -45,7 +45,9 @@ module.exports = class extends Client {
         this.logger.success(`Command ${cmd.info.name} loaded`);
         
         if(!modules.includes(cmd.config.module)) modules.push(cmd.config.module);
-        if(this.modulesInfo[cmd.config.module]) this.modulesInfo[cmd.config.module].commands.push(cmd.info.name);
+        if(!this.modulesInfo[cmd.config.module]) this.modulesInfo[cmd.config.module] = { undesactivable: false, commands: [] };
+        if(!cmd.config.moduleInfoHidden) this.modulesInfo[cmd.config.module].commands.push(cmd.info.name);
+        
         if(!commandsCache[cmd.info.category]) {
           categoriesCache.push(this.constants.HELP[cmd.info.category] ? Object.assign({id: cmd.info.category}, this.constants.HELP[cmd.info.category]) : {id: cmd.info.category, name: cmd.info.category, emoji: '📄', pos: 99});
           commandsCache[cmd.info.category] = [];

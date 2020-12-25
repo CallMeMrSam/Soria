@@ -58,8 +58,22 @@ daily:
     reward: "> 💸 **%{user}, you won:**"
     time: "> You will be able to take your daily reward in %{time}."
      
+# ADMIN ------------
 
-# SETTINGS COMMANDS -------------
+give-xp:
+  description: "Give XP to a member"
+
+  levels: "level•s"
+  messages:
+    give: "> You gave **%{xp}**XP to **%{user}**."
+
+give-money:
+  description: "Give money to a member"
+
+  messages:
+    give: "> You gave **%{money}**$ to **%{user}**"
+
+# SETTINGS COMMANDS ------------
 
 prefix:
   description: "Edit bot's prefix"

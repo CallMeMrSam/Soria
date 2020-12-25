@@ -24,7 +24,8 @@ module.exports = class extends Command {
       name: "eval",
       aliases: [],
       usage: ['eval <js>'],
-      permission: "botAdmin"
+      permission: "botAdmin",
+      moduleInfoHidden: true
     });
   }
 

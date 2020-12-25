@@ -36,9 +36,9 @@ module.exports = class extends Command {
       let winXP = this.client.functions.randomIntFromInterval(50, 150);
 
       let money = (+message.data.member.money || 0) + winMoney;
-      let { winLevel, winRole, xp, level } = this.client.functions.levelUp(((+message.data.member.experience || 0) + winXP), (+message.data.member.level || 1), message.member, message.data, this.client);
+      let { winLevel, winRole, xp, level } = this.client.functions.levelUp((+message.data.member.experience || 0) + winXP, (+message.data.member.level || 1), message.member, message.data, this.client);
       
-      message.channel.send(`${language.get('commands', 'daily.messages.reward')}\n• **${winMoney}**$\n• **${winXP}**XP${winLevel > 0 ? ` (+${winLevel} ${language.get('commands', 'daily.levels')})` : ''}`);
+      message.channel.send(`${language.get('commands', 'daily.messages.reward', { user: `<@${message.author.id}>` })}\n• **${winMoney}**$\n• **${winXP}**XP${winLevel > 0 ? ` (+${winLevel} ${language.get('commands', 'daily.levels')})` : ''}`);
 
       await this.client.db.updateMember(message.guild, message.member, {
         'lastDaily': new Date().getTime(),

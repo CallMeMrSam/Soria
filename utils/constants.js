@@ -9,7 +9,8 @@ module.exports = {
     general: { emoji: "📄", pos: 0 },
     social: { emoji: "👥", pos: 1 },
     economy: { emoji: "💸", pos: 3 },
-    settings: { emoji: "🔧", pos: 4 },
+    admin: { emoji: "🎓", pos: 4 },
+    settings: { emoji: "🔧", pos: 5 },
     dev: { emoji: "⭐", pos: 10 }
   },
 

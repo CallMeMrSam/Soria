@@ -35,6 +35,7 @@ module.exports = class extends Command {
         let n = args.shift()
         let givenXP = new Number(n);
         if(!n || !givenXP || isNaN(givenXP)) return Embed.getHelpEmbedFor('give-xp', message.prefix, language, this.client).fast(language.get('general', 'error_embed_title'), language.get('errors', 'invalid_number')).sender(message.author).sendIn(message.channel)
+        if(givenXP >= 10e6) return Embed.error(this.client, message.author, language, 'errors', 'too_big_number').sendIn(message.channel)
     
         let data = await this.client.db.getMember(message.guild, message.member);
         let { winLevel, winRole, xp, level } = this.client.functions.levelUp((+data.experience || 0) + givenXP, (+data.level || 1), member, message.data, this.client);

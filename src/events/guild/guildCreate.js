@@ -20,7 +20,7 @@ module.exports = class extends Event {
         .setTitle(`${client.user.name} joined a server`)
         .setDescription(`> **${guild.name}**`)
         .setThumbnail(guild.iconURL())
-        .addField('Owner', `> **${guild.owner.user.tag}**`, true)
+        .addField('Owner', `> **${guild.owner}**`, true)
         .addField('Member Count', `> **${guild.memberCount}**`, true)
         .sendIn(client.channels.cache.get('791703562576461865'))
     }

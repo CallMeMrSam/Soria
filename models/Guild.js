@@ -23,7 +23,7 @@ const guildSchema = Schema({
       type: Array,
       default: defaults.modules
     },
-
+    
     prefix: {
       type: String,
       default: defaults.prefix

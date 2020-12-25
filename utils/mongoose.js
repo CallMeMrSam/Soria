@@ -132,6 +132,7 @@ module.exports = class {
             $push: { users: [pushData] }
         });
         this._updateGuildCache(guild);
+        console.log('CREATE', pushData)
         return pushData
     }
 
@@ -145,8 +146,9 @@ module.exports = class {
         const position = data.users.map(u => u.id).indexOf(member.user.id);
         if(position == -1) return await this.createMember(guild, member);
         let memberData = data.users[position];
-
-        return Object.assign( Object.assign({}, DEFAULT_MEMBER_SETTINGS), memberData );
+        let r = Object.assign({}, DEFAULT_MEMBER_SETTINGS, memberData);
+        console.log('GET', r);
+        return r;
     }
 
     /**
@@ -162,6 +164,7 @@ module.exports = class {
         await models.Guild.updateOne({ guildID: guild.id, "users.id": member.user.id },
             { $set: pushData }
         );
+        console.log('UPDATE', pushData)
         this._updateGuildCache(guild);
     }
 

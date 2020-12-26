@@ -30,7 +30,7 @@ module.exports = class extends Command {
      * @param {String[]} args 
      */
     async run(language, message, args) {
-        let owners = this.client.config.BOT_ADMINS.map(x => '`' + this.client.users.cache.get(x).tag + '`').join(', ');
+        let owners = this.client.config.BOT_ADMINS.map(x => this.client.users.cache.get(x) ? '`' + this.client.users.cache.get(x).tag + '`' : '').join(', ');
         let commands = this.client.commands.size;
         let users = this.client.users.cache.size;
         let guilds = this.client.guilds.cache.size;

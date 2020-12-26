@@ -135,11 +135,19 @@ role-reward:
 
   title: "Role Reward"
   messages:
-    role_set: "Role %{role} defined at level %{level}."
-    role_deleted: "Role at level %{level} disabled."
+    role_set: "Role **%{role}** defined at level **%{level}**."
+    role_deleted: "Role at level **%{level}** has been disabled."
     no_roles: "No role."
 
-# EVAL ---------
+xp-multiplier:
+  description: "Set a XP multipier."
+
+  messages:
+    global_set: "Global multiper set to **%{ammount}**. %{warning}"
+    global_reset: "Global multiper set to the default value."
+    warning: "\nWarning. For values less than 1, users can win 0 xp. We advise you to stay above 1 unless you want to."
+
+# ADMIN ---------
 
 eval:
   description: "Eval javascript code"

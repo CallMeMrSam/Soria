@@ -24,6 +24,10 @@ module.exports = class extends Event {
     let max = client.functions.xpMax(level);
     let win = Math.floor(Math.random() * 5)+1;
 
+    if(message.data.guild && message.data.guild.settings && message.data.guild.settings.globalXpMultiplier) {
+      win = Math.floor(win * (+message.data.guild.settings.globalXpMultiplier));
+    }
+
     experience = experience + win;
     if(experience >= max) {
         level++;

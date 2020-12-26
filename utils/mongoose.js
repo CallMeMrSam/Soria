@@ -111,7 +111,10 @@ module.exports = class {
             if(data[key] !== pushData[key]) {
                 if(typeof pushData[key] === "object" && !Array.isArray(pushData[key])) {
                     for(const key2 in pushData[key]) {
-                        if(data[key][key2] !== pushData[key][key2]) data[key][key2] = Object.assign(data[key][key2], pushData[key][key2])
+                        if(typeof pushData[key][key2] === "object") {
+                            if(data[key][key2] !== pushData[key][key2]) data[key][key2] = Object.assign({}, data[key][key2], pushData[key][key2])
+                        }
+                        else data[key][key2] = pushData[key][key2]
                     }
                 }
                 else data[key] = pushData[key];

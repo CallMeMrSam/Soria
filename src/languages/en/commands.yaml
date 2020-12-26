@@ -8,6 +8,23 @@ help:
     infos: "To use this menu, click on the reactions below. If there isn't reactions, that means that the menu has expired (one minute after executing the command)"
     info_command: "All information about **%{command}** is here."
 
+botinfo:
+  description: "Display bot informations"
+
+  title: "Bot informations"
+
+  owners: "👑 Owners"
+  commands: "📄 Commands"
+  version: "🔧 Version"
+  users: "👥 Users"
+  guilds: "💻 Guilds"
+  channels: "💬 Channels"
+  dependencies: "🔧 Dependencies"
+  memory: "⚙ Memory usage"
+  uptime: "⏲ Uptime"
+  creation_date: "📅 Creation date"
+
+
 # SOCIAL COMMANDS -------------
 
 rank:
@@ -72,6 +89,18 @@ give-money:
 
   messages:
     give: "> You gave **%{money}**$ to **%{user}**"
+
+set-money:
+  description: "Set money to a member"
+
+  messages:
+    set: "> **%{user}** has now **%{money}**$"
+
+remove-money:
+  description: "Remove money from a member"
+
+  messages:
+    remove: "> You removed **%{money}**$ from **%{user}**"
 
 # SETTINGS COMMANDS ------------
 

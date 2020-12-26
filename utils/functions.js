@@ -47,6 +47,7 @@ module.exports.msToDurationFormated = (ms, language, showSeconds = false) => {
   if(hours > 0) r.push(`${hours} ` + (hours > 1 ? language.get('general', 'time.hours') : language.get('general', 'time.hour')));
   if(minutes > 0) r.push(`${minutes} ` + (minutes > 1 ? language.get('general', 'time.minutes') : language.get('general', 'time.minute')));
   if(showSeconds && seconds > 0) r.push(`${seconds} ` + (seconds > 1 ? language.get('general', 'time.seconds') : language.get('general', 'time.second')));
+  if(!showSeconds && r.length === 0) r.push(language.get('general', 'time.a_minute_ago')); 
   return r.join(' ');
 }
 

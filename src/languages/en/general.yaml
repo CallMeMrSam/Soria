@@ -11,6 +11,7 @@ levels:
   level_up_role: "> **GG %{user}! You just passed level %{level}**\nYo got the `%{role}` role!"
 
 time:
+  format: "MM/DD/YYYY HH:mm:ss"
   day: "day"
   days: "days"
   hour: "hour"
@@ -19,3 +20,5 @@ time:
   minute: "minute"
   seconds: "seconds"
   second: "second"
+
+  a_minute_ago: "a minute ago"

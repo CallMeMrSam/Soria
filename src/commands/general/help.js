@@ -60,7 +60,7 @@ module.exports = class extends Command {
                 .sendIn(message.channel);
 
         } else {
-            if(!message.guild.me.permissions.has('MANAGE_MESSAGES') || !message.channel.permissionsFor(message.guild.me).has('MANAGE_MESSAGES')) return Embed.error(this.client, message.author, language, 'errors', 'missing_permission' + message.channel.permissionsFor(message.guild.me).has('MANAGE_MESSAGES') ? '_channel' : '', { p: "MANAGE_MESSAGES" }).sendIn(message.channel);
+            if(!message.guild.me.permissions.has('MANAGE_MESSAGES') || !message.channel.permissionsFor(message.guild.me).has('MANAGE_MESSAGES')) return Embed.error(this.client, message.author, language, 'errors', 'missing_permission' + (message.channel.permissionsFor(message.guild.me).has('MANAGE_MESSAGES') ? '_channel' : ''), { p: "MANAGE_MESSAGES" }).sendIn(message.channel);
 
             let currentPage = 0;
             let renderPage = () => {

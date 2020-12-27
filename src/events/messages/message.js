@@ -35,6 +35,7 @@ module.exports = class extends Event {
     }
 
     const args = message.content.slice(message.prefix.length).trim().split(/\s+/g);
+    message.cleanArgs = message.cleanContent.slice(message.prefix.length).trim().split(/\s+/g);
     const cmdName = args.shift().toLowerCase();
 
     if(message.guild && !message.member) await message.guild.fetchMember(message.author);

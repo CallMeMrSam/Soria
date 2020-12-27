@@ -2,6 +2,7 @@ error: "Error."
 no_permission: "**You do not have the permission required.**\n> Permission `%{p}` required."
 module_disabled: "**The `%{m}` module is disabled.**"
 
+missing_permission: "Soria needs the following permission: `%{p}`"
 no_channel: "Please mention a channel."
 no_role: "Please specify a role (mention or ID)."
 no_argument: "Please specify an argument."

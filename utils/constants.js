@@ -7,10 +7,12 @@ module.exports = {
 
   HELP: {
     general: { emoji: "📄", pos: 0 },
-    social: { emoji: "👥", pos: 1 },
-    economy: { emoji: "💸", pos: 3 },
-    admin: { emoji: "🎓", pos: 4 },
-    settings: { emoji: "🔧", pos: 5 },
+    utils: { emoji: "🔧", pos: 1 },
+    fun: { emoji: "🎉", pos: 2 },
+    social: { emoji: "👥", pos: 3 },
+    economy: { emoji: "💸", pos: 4 },
+    admin: { emoji: "🎓", pos: 5 },
+    settings: { emoji: "🔧", pos: 6 },
     dev: { emoji: "⭐", pos: 10 }
   },
 

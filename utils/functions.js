@@ -97,6 +97,21 @@ module.exports.canGiveRole = (role) => (role.position < role.guild.me.roles.high
  */
 module.exports.randomIntFromInterval = (min, max) => Math.floor(Math.random() * ( max-min+1 ) + min);
 
+/**
+ * 
+ * @param {string} str 
+ */
+module.exports.extractAllText = (str) => {
+  const re = /"(.*?)"/g;
+  const result = [];
+  let current;
+  while (current = re.exec(str)) {
+    result.push(current.pop());
+  }
+  return result.length > 0
+    ? result
+    : [str];
+}
 
 /**
  * 

@@ -32,7 +32,7 @@ module.exports = class extends Command {
     async run(language, message, args) {
         let owners = this.client.config.BOT_ADMINS.map(x => this.client.users.cache.get(x) ? '`' + this.client.users.cache.get(x).tag + '`' : '').join(', ');
         let commands = this.client.commands.size;
-        let users = this.client.users.cache.size;
+        let users = this.client.guilds.cache.reduce((acc, guild) => acc + guild.memberCount, 0);
         let guilds = this.client.guilds.cache.size;
         let channels = this.client.channels.cache.size;
         let memoryUsage = `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`;

@@ -3,6 +3,10 @@ module.exports = {
     undesactivable: true,
     commands: []
   },
+  'games': {
+    undesactivable: false,
+    commands: []
+  },
   'levels': {
     undesactivable: false,
     commands: []

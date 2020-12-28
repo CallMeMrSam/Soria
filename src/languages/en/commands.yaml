@@ -1,4 +1,5 @@
 # GENERAL COMMANDS -------------
+
 help:
   description: "Help command."
 
@@ -24,6 +25,35 @@ botinfo:
   uptime: "⏲ Uptime"
   creation_date: "📅 Creation date"
 
+# UTILS COMMANDS -------------
+
+poll:
+  description: "Create a simple poll with upvote / downvote emojis"
+  title: "%{user}'s poll"
+  error: "Please specify a signe option"
+
+multipoll:
+  description: "Create a poll with multiple options"
+  title: "%{user}'s poll"
+  error: "Please specify multiple options (min: 2, max: 10)"
+
+# FUN COMMANDS -------------
+
+rps:
+  description: "Play rock paper scissors with the bot"
+  title: "Rock Paper Scissors"
+
+  rock: "Rock"
+  paper: "Paper"
+  scissors: "Scissors"
+
+  messages:
+    user_choice: "User choice"
+    bot_choice: "Bot choice"
+    result: "Result"
+    user_win: "You won!"
+    bot_win: "Soria won!"
+    equality: "Equality!"
 
 # SOCIAL COMMANDS -------------
 

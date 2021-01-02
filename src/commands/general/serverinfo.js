@@ -35,7 +35,7 @@ module.exports = class extends Command {
         let _members = await guild.members.fetch();
         let botCount = _members.filter((x) => x.user.bot).size;
         let memberCount = _members.size - botCount;
-        let boostCount = _members.filter((x) => x.premiumSinceTimestamp);
+        let boostCount = _members.filter((x) => x.premiumSinceTimestamp).size;
         let channelCount = guild.channels.cache.size;
         let emojiCount = guild.emojis.cache.size;
         let roleCount = guild.roles.cache.size;

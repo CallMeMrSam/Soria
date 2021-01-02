@@ -30,7 +30,7 @@ serverinfo:
 
   members: "👥 Utilisateurs"
   bots: "🤖 Bots"
-  boosts: "💜 Boosts"
+  boosters: "💜 Boosteurs"
   channels: "💬 Salons"
   emojis: "🙂 Emojis"
   roles: "🎓 Roles"

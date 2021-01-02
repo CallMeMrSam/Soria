@@ -30,7 +30,7 @@ serverinfo:
 
   members: "👥 Member count"
   bots: "🤖 Bot count"
-  boosts: "💜 Boost count"
+  boosters: "💜 Boosters count"
   channels: "💬 Channel count"
   emojis: "🙂 Emoji count"
   roles: "🎓 Role count"

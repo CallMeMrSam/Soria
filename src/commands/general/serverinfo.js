@@ -46,7 +46,7 @@ module.exports = class extends Command {
             .setAuthor(guild.name, guild.iconURL())
             .addField(language.get('commands', 'serverinfo.members'), `> \`${memberCount}\``, true)
             .addField(language.get('commands', 'serverinfo.bots'), `> \`${botCount}\``, true)
-            .addField(language.get('commands', 'serverinfo.boosts'), `> \`${boostCount}\``, true)
+            .addField(language.get('commands', 'serverinfo.boosters'), `> \`${boostCount}\``, true)
             .addField(language.get('commands', 'serverinfo.channels'), `> \`${channelCount}\``, true)
             .addField(language.get('commands', 'serverinfo.emojis'), `> \`${emojiCount}\``, true)
             .addField(language.get('commands', 'serverinfo.roles'), `> \`${roleCount}\``, true)

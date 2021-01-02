@@ -37,6 +37,10 @@ serverinfo:
   owner: "👑 Owner"
   creation_date: "📅 Creation date"
 
+support:
+  description: "Get the invitation link to join the support server."
+  join: "🚀 **Join the support server:** https://discord.gg/rXgqfw5Rhs"
+
 # UTILS COMMANDS -------------
 
 poll:

@@ -36,6 +36,10 @@ serverinfo:
   roles: "🎓 Roles"
   owner: "👑 Propriétaire"
   creation_date: "📅 Date de création"
+  
+support:
+  description: "Obtenir le lien d'invitation du serveur de support"
+  join: "🚀 **Rejoignez le serveur de support:** https://discord.gg/rXgqfw5Rhs"
 
 # UTILS COMMANDS -------------
 

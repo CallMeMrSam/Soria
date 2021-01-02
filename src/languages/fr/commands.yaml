@@ -1,0 +1,209 @@
+# GENERAL COMMANDS -------------
+
+help:
+  description: "Commande d'aide."
+
+  messages:
+    cannot_find_command: "Impossible de récupérer la commande."
+    more_help: "**Plus d'aide:** %{prefix}help <command>"
+    infos: "Pour utiliser le menu, clique sur les réactions ci-dessous. S'il n'y a plus de réaction c'est que le menu à expiré (Une minute après l'exécution de la commande)."
+    info_command: "Toutes les informations sur **%{command}**."
+
+botinfo:
+  description: "Afficher les informations du bot."
+
+  title: "Informations du bot"
+
+  owners: "👑 Propriétaires"
+  commands: "📄 Commandes"
+  version: "🔧 Version"
+  users: "👥 Utilisateurs"
+  guilds: "💻 Serveurs"
+  channels: "💬 Salons"
+  dependencies: "🔧 Dépendances"
+  memory: "⚙ RAM"
+  uptime: "⏲ Uptime"
+  creation_date: "📅 Date de création"
+
+serverinfo:
+  description: "Afficher les informations sur le serveur."
+
+  members: "👥 Utilisateurs"
+  bots: "🤖 Bots"
+  boosts: "💜 Boosts"
+  channels: "💬 Salons"
+  emojis: "🙂 Emojis"
+  roles: "🎓 Roles"
+  owner: "👑 Propriétaire"
+  creation_date: "📅 Date de création"
+
+# UTILS COMMANDS -------------
+
+poll:
+  description: "Créer un sondage simple avec des emojis d'upvote/downvote"
+  title: "Sondage de %{user}"
+  error: "Merci de spécifier une seule option."
+
+multipoll:
+  description: "Créer un sondage avec plusieurs options"
+  title: "Sondage de %{user}"
+  error: "Merci de spécifier plusieurs options (min: 2, max: 10)"
+
+# FUN COMMANDS -------------
+
+rps:
+  description: "Jouer au pierre feuille ciseaux avec le bot."
+  title: "Pierre Feuille Ciseaux"
+
+  rock: "Pierre"
+  paper: "Papier"
+  scissors: "Ciseaux"
+
+  messages:
+    user_choice: "Choix de l'utilisateur"
+    bot_choice: "Choix du bot"
+    result: "Résultat"
+    user_win: "Victoire!"
+    bot_win: "Défaite!"
+    equality: "Egalité!"
+
+# SOCIAL COMMANDS -------------
+
+rank:
+  description: "Voir le niveau de quelqu'un."
+  level: "**Niveau** %{level}"
+
+profile:
+  description: "Voir le profil de quelqu'un"
+
+  level: "🏆 Niveau"
+  reputation: "❤ Réputation"
+  money: "💸 Argent"
+
+bio:
+  description: "Modifier votre biographie."
+
+  messages:
+    bio_off: "Votre biographie a été supprimée."
+    bio_updated: "Votre biographie a été mise à jour."
+    error_length: "La taille de votre biographie doit être comprise entre 3 et 2048 caractères."
+
+rep:
+  description: "Donner un point de réputation à quelqu'un"
+
+  messages:
+    give: "> ❤ **%{author}, vous avez donné un point de réputation à %{user}!**"
+    time: "> Vous pourrez donner un point de réputation dans %{time}."
+
+leaderboard:
+  description: "Afficher le classement du serveur"
+
+  reputation_title: "🏆 Classement - Réputation"
+  levels_title: "🏆 Classement - Niveaux"
+  money_title: "🏆 Classement - Argent"
+
+  messages:
+    update: "Classement actualisé toutes les 5 minutes."
+    your_position: "🎖 Votre position:"
+    out_of_leaderboard: "Hors classement"
+
+# ECONOMY COMMANDS ------------
+
+daily:
+  description: "Gagner de l'XP et de l'argent tous les jours!"
+
+  levels: "niveau.x"
+  messages:
+    reward: "> 💸 **%{user}, vous avez gagné:**"
+    time: "> Vour pourrez récupérer votre récompense dans %{time}."
+     
+# ADMIN ------------
+
+give-xp:
+  description: "Donner de l'XP à quelqu'un."
+
+  levels: "niveau.x"
+  messages:
+    give: "> Vous avez donné **%{xp}**XP à **%{user}**."
+
+give-money:
+  description: "Donner de l'argent à quelqu'un"
+
+  messages:
+    give: "> Vous avez donné **%{money}**$ à **%{user}**"
+
+set-money:
+  description: "Définir l'argent d'un utilisateur."
+
+  messages:
+    set: "> **%{user}** a maintenant **%{money}**$"
+
+remove-money:
+  description: "Retirer de l'argent à un utilisateur"
+
+  messages:
+    remove: "> Vous avez retiré **%{money}**$ de **%{user}**"
+
+# SETTINGS COMMANDS ------------
+
+prefix:
+  description: "Modifier le préfixe du bot"
+
+  messages:
+    prefix_edit: "**Nouveau préfixe:** `%{prefix}`"
+    prefix_reset: "**Le préfixe à été réinitialisé:** `%{prefix}`"
+
+module:
+  description: "Modifier les modules du bot."
+
+  title: "Modules"
+  messages:
+    activated_modules: "**__Modules activés:__**"
+    disabled_modules: "**__Modules désactivés:__**"
+    toggle_module: "Basculer un module:"
+    invalid_module: "Veuillez spécifier un module valide."
+    undesactivable: "**Non-désactivable:** %{b}"
+    commands: "**Commandes:**\n%{c}"
+    module_activated: "**Le module `%{m}` a été __activé__**"
+    module_disabled: "**Le module `%{m}` a été __désactivé__**"
+    undesactivable_module: "Le module n'est pas désactivable."
+    
+
+language:
+  description: "Modifier le language du bot."
+
+  messages: 
+    updated: "Language mis à jour: %{language}"
+    unvalid_language: "Merci de spécifier un language valide.\n**__Languages__**: %{languages}"
+
+role-reward:
+  description: "Ajouter des roles en récompenses de niveaux."
+
+  title: "Récompenses"
+  messages:
+    role_set: "Le rôle **%{role}** a été définis comme récompense au niveau **%{level}**."
+    role_deleted: "Le rôle au niveau **%{level}** a été désactivé."
+    no_roles: "Aucun rôles."
+
+xp-multiplier:
+  description: "Définir un multiplicateur d'xp."
+
+  messages:
+    global_set: "Multiplicateur d'xp global définis à **%{ammount}**. %{warning}"
+    global_reset: "Multiplicateur d'xp global désactivé."
+    warning: "\nAvertissement. Pour les valeurs inférieures à 1, les utilisateurs peuvent parfois gagner 0xp. Nous conseillons de rester au dessus de 1 sauf si ce comportement est voulu."
+
+rep-time:
+  description: "Changer le cooldown de la commande 'rep'"
+  
+  messages:
+    time_reset: "Cooldown rénitialisé."
+    time_update: "Cooldown définis à **%{time}** heure.s."
+
+# ADMIN ---------
+
+eval:
+  description: "Eval javascript code"
+
+bypass:
+  description: "Bypass"

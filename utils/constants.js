@@ -13,7 +13,7 @@ module.exports = {
     economy: { emoji: "💸", pos: 4 },
     admin: { emoji: "🎓", pos: 5 },
     settings: { emoji: "🔧", pos: 6 },
-    dev: { emoji: "⭐", pos: 10 }
+    botadmin: { emoji: "⭐", pos: 10 }
   },
 
   EMOJIS: {

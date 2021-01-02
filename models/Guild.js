@@ -9,9 +9,9 @@ const guildSchema = Schema({
     
     guildID: String,
     
-    lang: {
+    language: {
       type: String,
-      default: defaults.lang
+      default: defaults.language
     },
 
     settings: {

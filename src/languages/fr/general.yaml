@@ -1,0 +1,25 @@
+translation_author: "239654425424035840"
+
+embed:
+  sender: "Exécuté par %{user}"
+
+error_embed_title: "❌ Erreur"
+success_embed_title: "✅ Succès"
+
+levels:
+  level_up: "> **GG %{user}! Tu es passé niveau %{level}**!"
+  level_up_role: "> **GG %{user}! Tu es passé niveau %{level}**!\nTu as gagné le rôle `%{role}`!"
+  logs: "> **%{user}** reached level **%{level}** on `%{guild}`"
+
+time:
+  format: "DD/MM/YYYY HH:mm:ss"
+  day: "jour"
+  days: "jours"
+  hour: "heure"
+  hours: "heures"
+  minutes: "minutes"
+  minute: "minute"
+  seconds: "secondes"
+  second: "seconde"
+
+  a_minute_ago: "Il y a un minute"

@@ -4,7 +4,7 @@ for(const m in require('./modules')) { _modules.push(m) }
 module.exports = {
   DEFAULT_SETTINGS: {
     prefix: '!',
-    lang: 'en',
+    language: 'en',
     modules: _modules
   },
 

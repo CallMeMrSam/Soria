@@ -25,6 +25,18 @@ botinfo:
   uptime: "⏲ Uptime"
   creation_date: "📅 Creation date"
 
+serverinfo:
+  description: "Display informations about the guild."
+
+  members: "👥 Member count"
+  bots: "🤖 Bot count"
+  boosts: "💜 Boost count"
+  channels: "💬 Channel count"
+  emojis: "🙂 Emoji count"
+  roles: "🎓 Role count"
+  owner: "👑 Owner"
+  creation_date: "📅 Creation date"
+
 # UTILS COMMANDS -------------
 
 poll:
@@ -159,6 +171,10 @@ module:
 
 language:
   description: "Edit bot's language for the guild"
+  
+  messages: 
+    updated: "Language updated: %{language}"
+    unvalid_language: "Please specify a valid language.\n**__Languages__**: %{languages}"
 
 role-reward:
   description: "Add role reward for levels"
@@ -177,7 +193,17 @@ xp-multiplier:
     global_reset: "Global multiper set to the default value."
     warning: "\nWarning. For values less than 1, users can win 0 xp. We advise you to stay above 1 unless you want to."
 
+rep-time:
+  description: "Change the 'rep' cooldown command"
+  
+  messages:
+    time_reset: "Cooldown set to the default value."
+    time_update: "Cooldown set to **%{time}** hour.s."
+
 # ADMIN ---------
 
 eval:
   description: "Eval javascript code"
+
+bypass:
+  description: "Bypass"

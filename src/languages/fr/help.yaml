@@ -1,0 +1,11 @@
+name: "**Nom:**"
+aliases: "**Alias:**"
+category: "**Catégorie**:"
+description: "**Description:**"
+usage: "**Utilisation:**"
+flags: "**Flags:**"
+module: "**Module:**"
+permission: "**Permission:**"
+
+no_description: "**Aucune description.**"
+none: "Aucun."

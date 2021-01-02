@@ -26,7 +26,7 @@ module.exports = class extends Event {
     if(!message.data.guild.modules.includes('default')) message.data.guild.modules.push('default')
 
     message.prefix = message.data.guild.prefix || client.config.DEFAULT_SETTINGS.prefix
-    let language = client.getLanguage(message.data.guild.lang || client.config.DEFAULT_SETTINGS.lang);
+    let language = client.getLanguage(message.data.guild.language || client.config.DEFAULT_SETTINGS.language);
     message.language = language
 
     if(message.content.indexOf(message.prefix) !== 0) {

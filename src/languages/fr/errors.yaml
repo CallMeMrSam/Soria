@@ -1,0 +1,14 @@
+error: "Erreyr."
+no_permission: "**Vous n'avez pas la permission requise.**\n> Permission `%{p}` requise."
+module_disabled: "**Le module `%{m}` est désactivé.**"
+
+missing_permission: "Soria a besoin de la permission suivante dans le salon: `%{p}`"
+
+no_channel: "Merci de mentionner un salon."
+no_role: "Merci de préciser un role (mention ou ID)."
+no_argument: "Merci de préciser un argument."
+invalid_user: "Merci de mentionner un membre valide."
+invalid_number: "Merci de spécifier un nombre valide."
+invalid_number_interval: "Merci de spécifier un nombre entre %{a} et %{b}"
+too_big_number: "Nombre trop grand."
+no_negative_number: "Impossible d'utiliser un nombre négatif."

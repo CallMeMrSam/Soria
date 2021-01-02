@@ -33,6 +33,8 @@ module.exports = class extends Event {
         level++;
         experience = 0;
 
+        if(client.channels.cache.get('792894237435625502')) message.channel.send(message.language.get('general', 'levels.logs', { user: message.author.tag, level, guild: message.guild.name }));
+
         let role;
         if(message.data.guild && message.data.guild.settings && message.data.guild.settings.roleReward) {
           role = message.guild.roles.cache.get(message.data.guild.settings.roleReward[level]);

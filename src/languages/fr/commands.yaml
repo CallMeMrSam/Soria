@@ -8,6 +8,7 @@ help:
     more_help: "**Plus d'aide:** %{prefix}help <command>"
     infos: "Pour utiliser le menu, clique sur les réactions ci-dessous. S'il n'y a plus de réaction c'est que le menu à expiré (Une minute après l'exécution de la commande)."
     info_command: "Toutes les informations sur **%{command}**."
+    links: "[Serveur support](https://discord.gg/ntnqaN9bQ5) ─ [Inviter Soria](https://top.gg/bot/791363586412249089) ─ [Voter pour Soria](https://top.gg/bot/791363586412249089/vote) ─ [Faire un don](https://paypal.me/pools/c/8vJvARxOWh)"
 
 botinfo:
   description: "Afficher les informations du bot."
@@ -32,6 +33,10 @@ badges:
 support:
   description: "Obtenir le lien d'invitation du serveur de support"
   join: "🚀 **Rejoignez le serveur de support:** https://discord.gg/rXgqfw5Rhs"
+  
+invite:
+  description: "Obtenir le lien d'invitation du bot"
+  add: "🚀 **Ajouter Soria sur votre serveur:** https://top.gg/bot/791363586412249089"
 
 # UTILS COMMANDS -------------
 

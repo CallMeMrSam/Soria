@@ -52,7 +52,7 @@ module.exports = class extends Command {
       let member = message.guild.members.cache.get(id);
 
       let rolesSize = member.roles.cache.filter(x => x.id !== x.guild.id).size;
-      let roles = member.roles.cache.filter(x => x.id !== x.guild.id).map(x => x).sort((a, b) => a.position - b.position).join(', ')
+      let roles = member.roles.cache.filter(x => x.id !== x.guild.id).sort((a, b) => a.position - b.position).map(x => ['#2f3136'].includes(x.hexColor.toLowerCase()) ? `@${x.name}` : x).join(', ')
       if(!roles) roles = language.get('commands', 'userinfo.no_role');
       let joinDate = dayjs(member.joinedAt).format(language.get('general', 'time.format')).toString();
 

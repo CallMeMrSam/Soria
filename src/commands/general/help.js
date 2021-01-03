@@ -71,6 +71,7 @@ module.exports = class extends Command {
           .fast(`${currentCategory.emoji} ${language.get('categories', currentCategory.id)} ─ (${currentPage+1}/${categories.length})`, currentCmds.map(x => `> \`${message.prefix}${x.name}\` ${language.get('commands', `${x.name}.description`)}`).join('\n'))
           .addField('\u200b', language.get('commands', 'help.messages.more_help', { prefix: message.prefix }))
           .addField('\u200b', language.get('commands', 'help.messages.infos'))
+          .addField('\u200b', language.get('commands', 'help.messages.links'))
           .sender(message.author)
       }
 

@@ -30,9 +30,9 @@ module.exports = class extends Event {
     client.guilds.cache.forEach(async(guild) => {
       await client.db.getGuild(guild)
     })
-    
+
     setInterval(() => {
       client.user.setActivity(getActivity(client));
-    }, 20000)
+    }, 60000)
   }
 }

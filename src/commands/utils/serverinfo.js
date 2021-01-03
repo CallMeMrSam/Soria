@@ -6,7 +6,6 @@ const Language = require('../../../structure/Language');
 const { Command, Embed } = require('../../../structure/Bot');
 const { Message } = require('discord.js');
 
-const { version } = require('../../../package.json');
 const dayjs = require('dayjs');
 
 module.exports = class extends Command {
@@ -18,7 +17,7 @@ module.exports = class extends Command {
   constructor(client) {
     super(client, {
       name: "serverinfo",
-      aliases: [],
+      aliases: ['si'],
       usage: ['serverinfo']
     });
   }

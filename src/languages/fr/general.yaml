@@ -6,6 +6,8 @@ embed:
 error_embed_title: "❌ Erreur"
 success_embed_title: "✅ Succès"
 
+global_badges: "**Badges globaux:** %{b}"
+
 levels:
   level_up: "> **GG %{user}! Tu es passé niveau %{level}**!"
   level_up_role: "> **GG %{user}! Tu es passé niveau %{level}**!\nTu as gagné le rôle `%{role}`!"
@@ -23,3 +25,11 @@ time:
   second: "seconde"
 
   a_minute_ago: "Il y a un minute"
+
+badges:
+  botAdmin:
+    name: "Admin du bot"
+    description: "Pour les propriétaires du bot"
+  addBot:
+    name: "Bot ajouté"
+    description: "Pour ceux qui ont ajouté le bot"

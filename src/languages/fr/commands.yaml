@@ -25,17 +25,9 @@ botinfo:
   uptime: "⏲ Uptime"
   creation_date: "📅 Date de création"
 
-serverinfo:
-  description: "Afficher les informations sur le serveur."
-
-  members: "👥 Utilisateurs"
-  bots: "🤖 Bots"
-  boosters: "💜 Boosteurs"
-  channels: "💬 Salons"
-  emojis: "🙂 Emojis"
-  roles: "🎓 Roles"
-  owner: "👑 Propriétaire"
-  creation_date: "📅 Date de création"
+badges:
+  description: "Afficher tous les badges globaux"
+  title: "Badges"
   
 support:
   description: "Obtenir le lien d'invitation du serveur de support"
@@ -52,6 +44,29 @@ multipoll:
   description: "Créer un sondage avec plusieurs options"
   title: "Sondage de %{user}"
   error: "Merci de spécifier plusieurs options (min: 2, max: 10)"
+
+serverinfo:
+  description: "Afficher les informations sur le serveur."
+
+  members: "👥 Utilisateurs"
+  bots: "🤖 Bots"
+  boosters: "💜 Boosteurs"
+  channels: "💬 Salons"
+  emojis: "🙂 Emojis"
+  roles: "🎓 Roles"
+  owner: "👑 Propriétaire"
+  creation_date: "📅 Date de création"
+
+userinfo:
+  description: "Afficher les informations d'un utilisateur"
+
+  username: "👥 Nom"
+  tag: "#️⃣ Tag"
+  id: "🔢 ID"
+  roles: "🎓 Rôles"
+  no_role: "Aucun roles."
+  join_date: "📅 Rejoint le"
+  creation_date: "📅 Créé le"
 
 # FUN COMMANDS -------------
 

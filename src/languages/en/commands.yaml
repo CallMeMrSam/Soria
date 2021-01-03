@@ -25,17 +25,9 @@ botinfo:
   uptime: "⏲ Uptime"
   creation_date: "📅 Creation date"
 
-serverinfo:
-  description: "Display informations about the guild."
-
-  members: "👥 Member count"
-  bots: "🤖 Bot count"
-  boosters: "💜 Boosters count"
-  channels: "💬 Channel count"
-  emojis: "🙂 Emoji count"
-  roles: "🎓 Role count"
-  owner: "👑 Owner"
-  creation_date: "📅 Creation date"
+badges:
+  description: "Show all global badges"
+  title: "Badges"
 
 support:
   description: "Get the invitation link to join the support server."
@@ -52,6 +44,29 @@ multipoll:
   description: "Create a poll with multiple options"
   title: "%{user}'s poll"
   error: "Please specify multiple options (min: 2, max: 10)"
+
+serverinfo:
+  description: "Display informations about the guild."
+
+  members: "👥 Member count"
+  bots: "🤖 Bot count"
+  boosters: "💜 Boosters count"
+  channels: "💬 Channel count"
+  emojis: "🙂 Emoji count"
+  roles: "🎓 Role count"
+  owner: "👑 Owner"
+  creation_date: "📅 Creation date"
+
+userinfo:
+  description: "Display informations about an user"
+
+  username: "👥 Username"
+  tag: "#️⃣ Tag"
+  id: "🔢 ID"
+  roles: "🎓 Roles"
+  no_role: "No roles."
+  join_date: "📅 Join date"
+  creation_date: "📅 Creation date"
 
 # FUN COMMANDS -------------
 

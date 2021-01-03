@@ -28,6 +28,7 @@ module.exports = class extends Event {
     message.prefix = message.data.guild.prefix || client.config.DEFAULT_SETTINGS.prefix
     let language = client.getLanguage(message.data.guild.language || client.config.DEFAULT_SETTINGS.language);
     message.language = language
+    message.author.badges = client.globalBadges.getUserBadges(message.author, client, message.data.user)
 
     if(message.content.indexOf(message.prefix) !== 0) {
       if(message.data.guild.modules.includes('levels')) client.emit('xp', (language, message))

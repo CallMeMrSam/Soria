@@ -19,6 +19,7 @@ module.exports = class extends Client {
     this.functions = require('../utils/functions');
     this.permissions = require('../utils/permissions');
     this.modulesInfo = require('../utils/modules');
+    this.globalBadges = require('../utils/globalBadges');
 
     this.logger = new Logger();
     this.db = new (require('../utils/mongoose'))(this);
